@@ -7,6 +7,9 @@ let hoverPlayMute = document.querySelector('.hover-play-mute');
 let buttonStartMuteAutoplay = document.querySelector('.item-button-mute-autoplay');
 let buttonStartVideoMuteAutoplay = document.querySelector('.button-click-mute-autoplay');
 let hoverPlayMuteAutoplay = document.querySelector('.hover-play-mute-autoplay');
+let buttonStartMuteAutoplayInline = document.querySelector('.item-button-mute-autoplay-inline');
+let buttonStartVideoMuteAutoplayInline = document.querySelector('.button-click-mute-autoplay-inline');
+let hoverPlayMuteAutoplayInline = document.querySelector('.hover-play-mute-autoplay-inline');
 
 
 function PlayVideo() {
@@ -69,3 +72,23 @@ function handlerPlayMuteAutoplay(event) {
 };
 
 hoverPlayMuteAutoplay.addEventListener('mouseover', handlerPlayMuteAutoplay);
+
+
+function PlayVideoMuteAutoplayInline() {
+	buttonStartVideoMuteAutoplayInline.play();
+}
+
+function DelayPlayVideoMuteAutoplayInline() {
+	setTimeout(PlayVideoMuteAutoplayInline, 2000);
+}
+
+buttonStartMuteAutoplayInline.addEventListener('click', DelayPlayVideoMuteAutoplayInline);
+
+
+function handlerPlayMuteAutoplayInline(event) {
+  if (event.target.className.includes('hover-play-mute-autoplay-inline')) {
+	 event.target.play()
+  }
+};
+
+hoverPlayMuteAutoplayInline.addEventListener('mouseover', handlerPlayMuteAutoplayInline);
